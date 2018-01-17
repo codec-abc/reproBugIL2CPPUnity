@@ -1,0 +1,10 @@
+[package]
+name = "unity_ffi"
+version = "0.1.0"
+authors = ["Christophe Vergoni <christophe.vergoni@non.schneider-electric.com>"]
+
+[dependencies]
+
+
+[lib]
+crate-type = ["cdylib"]
