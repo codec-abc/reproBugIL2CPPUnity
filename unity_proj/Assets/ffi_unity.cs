@@ -24,7 +24,7 @@ public class ffi_unity : MonoBehaviour
 		long x = 11;
 		GUI.Label ( new Rect(100, 100, 500, 80), "x was " + x);
 
-		ffi.print_and_change_value_ios (ref x);
+		ffi.print_and_change_value_ios (out x);
 		GUI.Label ( new Rect(100, 200, 500, 80), "x is now " + x);
 	}
 	#endif

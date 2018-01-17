@@ -12,6 +12,6 @@ public static class ffi
 	#else
 
 	[DllImport("__Internal")]
-	public static extern void print_and_change_value_ios (ref long x); // works with ref but not with out
+	public static extern void print_and_change_value_ios (out long x); // works with ref but not with out
 	#endif
 }

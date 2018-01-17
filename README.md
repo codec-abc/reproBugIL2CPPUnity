@@ -76,3 +76,15 @@ To build a dynamic library for MacOS, edit the ```Cargo.toml``` file and set the
 ### Static library for iOS
 
 To build a static library for iOS, edit the ```Cargo.toml``` file and set the crate type (the ```crate-type``` line) to ```"staticlib"``` under the ```[lib]``` section. Then run ```cargo build --release --target aarch64-apple-ios``` to build the static iOS library.
+
+## To reproduce the bug
+
+Use the scene ```Assets/main.unity```.
+
+## With the Unity editor
+
+You cannot see the bug with the editor as the code run correctly with Mono either with ref or out. To see what the native function is able to read from memory the result are logged to ```~/result.txt```.
+
+## When building for iOS
+
+You can see the bug using the code when the external function ```print_and_change_value_ios``` is using a out parameter. When looking at the standard output shown in XCode you will see a value of 0 (instead of 11). If you update the signature of ```print_and_change_value_ios``` to use a ```ref``` parameter the code will now correctly and you will be able to see the expected output in the standard output shown in XCode.
