@@ -5,7 +5,7 @@ The bug which is happening is in the code generation of IL2CPP when using the C#
 ## Context:
 
 In the following we assume a 64 bits system. On this system, the Rust ```isize``` type is a 64 bits unsigned integer which is the same as the C# ```long```.
-Now, let's say we have a native function that take a pointer (in this case a unsigned 674 bits integer).
+Now, let's say we have a native function that take a pointer (in this case a unsigned 64 bits integer).
 We would have something like this:
 
 ```rust
